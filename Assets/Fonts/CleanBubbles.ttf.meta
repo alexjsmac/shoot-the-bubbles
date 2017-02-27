@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 44f24cacfe850444291ba023f99c063a
+timeCreated: 1488168559
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: CleanBubbles
+  fontNames:
+  - CleanBubbles
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
