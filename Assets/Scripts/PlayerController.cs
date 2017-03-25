@@ -11,13 +11,19 @@ public class PlayerController : MonoBehaviour {
 	// score counter
 	public int score;
 
-	public void Start(){
-		scoreText = GameObject.Find("Text").GetComponent<Text>();
+	PlayerController(){
+	}
+
+	// Use this for initialization
+	public void Start () {
+		score = 0;
 		scoreText.text = "Score: " + score.ToString();
+
 	}
 	
 	public void UpdateScore ()
 	{
+		score += 100;
 		scoreText.text = "Score: " + score.ToString();
 		score += 100;
 		print ("Update score!");
