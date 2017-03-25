@@ -11,6 +11,14 @@ public class PlayerController : MonoBehaviour {
 	// score counter
 	public int score;
 
+	public float health = 100f;
+
+	public float healthRemaining= 0f;
+
+	public Image greenHealthBar;
+
+	public GameObject HealthBar;
+
 	PlayerController(){
 	}
 
@@ -19,13 +27,23 @@ public class PlayerController : MonoBehaviour {
 		score = 0;
 		scoreText.text = "Score: " + score.ToString();
 
+		healthRemaining = health;
+	
+
 	}
 	
 	public void UpdateScore ()
 	{
 		score += 100;
 		scoreText.text = "Score: " + score.ToString();
-		score += 100;
-		print ("Update score!");
 	}
+
+	public void decreaseHealth() {
+
+		healthRemaining -= 10;
+		greenHealthBar.transform.localScale = new Vector3 (healthRemaining, greenHealthBar.transform.localScale.y, greenHealthBar.transform.localScale.z);
+	}
+
+
+
 }

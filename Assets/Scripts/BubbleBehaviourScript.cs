@@ -72,6 +72,8 @@ public class BubbleBehaviourScript : MonoBehaviour {
 
 		if (transform.position.z < 1) {
 			StartCoroutine( DestroyCube());
+			playerobject.decreaseHealth ();
+
 		}
 	}
 
