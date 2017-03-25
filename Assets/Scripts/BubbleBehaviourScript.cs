@@ -11,7 +11,6 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	public float mScaleMin  = 0.5f;
 	public PlayerController playerobject;
 	 
-
 	// Orbit max Speed
 	public float mOrbitMaxSpeed = 30f;
 
@@ -61,6 +60,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		
 		// makes the cube orbit and rotate
 		RotateCube();
 
@@ -68,9 +68,11 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		if ( !mIsCubeScaled )
 			ScaleObj();
 
-		//if (transform.position == Camera.main.transform.position)
-			//print("Hit!");
-			//StartCoroutine( DestroyCube());
+		print("object position: " + transform.position);
+
+		if (transform.position.z < 1) {
+			StartCoroutine( DestroyCube());
+		}
 	}
 
 	// Makes the cube rotate around a anchor point
@@ -119,17 +121,14 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		mIsAlive = false;
 		playerobject.UpdateScore ();
 
-
 		// Make the cube desappear
 		GetComponent<Renderer>().enabled = false;
+
 		// we'll wait some time before destroying the element
 		// this is usefull when using some kind of effect
 		// like a explosion sound effect.
 		// in that case we could use the sound lenght as waiting time
 		yield return new WaitForSeconds(0.5f);
 		Destroy(gameObject);
-
-
-
 	}
 }
