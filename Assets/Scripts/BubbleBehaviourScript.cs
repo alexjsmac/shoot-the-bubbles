@@ -29,8 +29,11 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	public float mGrowingSpeed  = 10f;
 	private bool mIsCubeScaled  = false;
 
+	public PlayerController playerobject;
+
 	void Start () {
 		CubeSettings();
+		playerobject = FindObjectOfType (typeof(PlayerController)) as PlayerController;
 	}
 		
 	// Set initial cube settings
@@ -70,6 +73,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 			if (transform.CompareTag("Alive")) {
 				StartCoroutine (DestroyCube ());
 				transform.tag = "Destroyed";
+				playerobject.decreaseHealth ();
 				print ("Hit!");
 			}
 		}
