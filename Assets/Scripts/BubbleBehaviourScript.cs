@@ -26,24 +26,15 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	// Max Cube Scale
 	private Vector3 mCubeMaxScale;
 
-
-
-
-
 	// Growing Speed
 	public float mGrowingSpeed  = 10f;
 	private bool mIsCubeScaled  = false;
 
-
 	void Start () {
 		CubeSettings();
-		playerobject.Start ();
-		// Initialize score variable and update based on UpdateScore method
-
+		playerobject = FindObjectOfType (typeof(PlayerController)) as PlayerController;
 	}
-
-
-
+		
 	// Set initial cube settings
 	private void CubeSettings(){
 		
@@ -137,7 +128,5 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		yield return new WaitForSeconds(0.5f);
 		Destroy(gameObject);
 		playerobject.UpdateScore ();
-
-
 	}
 }
