@@ -33,6 +33,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 
 	// Set initial cube settings
 	private void CubeSettings(){
+		
 		// defining the anchor point as the main camera
 		mOrbitAnchor = Camera.main.transform;
 
@@ -40,7 +41,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		float x = Random.Range(-1f,1f);
 		float y = Random.Range(-1f,1f);
 		float z = Random.Range(-1f,1f);
-		mOrbitDirection = new Vector3( x, y , z );
+		mOrbitDirection = new Vector3( x, y, z );
 
 		// defining speed
 		mOrbitSpeed = Random.Range( 5f, mOrbitMaxSpeed );
@@ -61,15 +62,21 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		// scale cube if needed
 		if ( !mIsCubeScaled )
 			ScaleObj();
+
+		//if (transform.position == Camera.main.transform.position)
+			//print("Hit!");
+			//StartCoroutine( DestroyCube());
 	}
 
 	// Makes the cube rotate around a anchor point
 	// and rotate around its own axis
 	private void RotateCube(){
-		
+
 		// rotate cube around camera
-		transform.RotateAround(
-			mOrbitAnchor.position, mOrbitDirection, mOrbitSpeed * Time.deltaTime);
+		//transform.RotateAround(mOrbitAnchor.position, mOrbitDirection, mOrbitSpeed * Time.deltaTime);
+
+		transform.LookAt(Camera.main.transform);
+		transform.Translate (Vector3.forward * Time.deltaTime);
 
 		// rotating around its axis
 		transform.Rotate( mOrbitDirection * 30 * Time.deltaTime);

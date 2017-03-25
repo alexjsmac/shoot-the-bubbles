@@ -53,7 +53,8 @@ public class SpawnScript : MonoBehaviour {
 		Transform cam = Camera.main.transform;
 
 		// set the position 10 units forward from the camera position
-		transform.position = cam.forward * 10;
+		transform.position = cam.forward * 20;
+		mPositionSet = true;
 		return true;
 	}
 
