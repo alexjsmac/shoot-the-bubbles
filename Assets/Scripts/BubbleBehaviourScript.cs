@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class BubbleBehaviourScript : MonoBehaviour {
 
 	// Cube's Max/Min scale
 	public float mScaleMax  = 2f;
 	public float mScaleMin  = 0.5f;
+	public PlayerController playerobject;
 
 	// Orbit max Speed
 	public float mOrbitMaxSpeed = 30f;
@@ -23,13 +26,23 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	// Max Cube Scale
 	private Vector3 mCubeMaxScale;
 
+
+
+
+
 	// Growing Speed
 	public float mGrowingSpeed  = 10f;
 	private bool mIsCubeScaled  = false;
 
+
 	void Start () {
 		CubeSettings();
+		playerobject.Start ();
+		// Initialize score variable and update based on UpdateScore method
+
 	}
+
+
 
 	// Set initial cube settings
 	private void CubeSettings(){
@@ -113,6 +126,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	private IEnumerator DestroyCube(){
 		mIsAlive = false;
 
+
 		// Make the cube desappear
 		GetComponent<Renderer>().enabled = false;
 
@@ -122,5 +136,8 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		// in that case we could use the sound lenght as waiting time
 		yield return new WaitForSeconds(0.5f);
 		Destroy(gameObject);
+		playerobject.UpdateScore ();
+
+
 	}
 }

@@ -23,6 +23,11 @@ public class SpawnScript : MonoBehaviour {
 	// define if position was set
 	private bool mPositionSet;
 
+	public int score;
+
+
+
+
 	void Start () {
 		// Initializing spawning loop
 		StartCoroutine( SpawnLoop() );
@@ -30,6 +35,9 @@ public class SpawnScript : MonoBehaviour {
 		// Initialize Cubes array according to
 		// the desired quantity
 		mCubes = new GameObject[ mTotalCubes ];
+
+
+
 	}
 
 	// We'll use a Coroutine to give a little
@@ -87,4 +95,6 @@ public class SpawnScript : MonoBehaviour {
 		cube.transform.localScale = new Vector3( scale, scale, scale );
 		return cube;
 	}
+
+
 }
