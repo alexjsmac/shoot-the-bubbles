@@ -66,8 +66,12 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		if ( !mIsCubeScaled )
 			ScaleObj();
 
-		if (transform.position.z < 1 && (transform.position.x != 0 && transform.position.y != 0)) {
-			StartCoroutine( DestroyCube());
+		if (transform.position.z < 1 && (transform.position.x != 0 && transform.position.y != 0) && transform.childCount == 0) {
+			if (transform.CompareTag("Alive")) {
+				StartCoroutine (DestroyCube ());
+				transform.tag = "Destroyed";
+				print ("Hit!");
+			}
 		}
 	}
 
