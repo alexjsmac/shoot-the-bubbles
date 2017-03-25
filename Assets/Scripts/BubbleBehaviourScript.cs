@@ -67,8 +67,12 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		if ( !mIsCubeScaled )
 			ScaleObj();
 
-		//if (transform.position == Camera.main.transform.position)
-			//print("Hit!");
+		print("object position: " + transform.position);
+
+		if (transform.position.z < 1) {
+			StartCoroutine( DestroyCube());
+		}
+		//	
 			//StartCoroutine( DestroyCube());
 	}
 
