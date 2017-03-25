@@ -30,8 +30,6 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	public float mGrowingSpeed  = 10f;
 	private bool mIsCubeScaled  = false;
 
-	public PlayerController playerobject;
-
 	void Start () {
 		CubeSettings();
 		playerobject = FindObjectOfType (typeof(PlayerController)) as PlayerController;
@@ -50,7 +48,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		mOrbitDirection = new Vector3( x, y, z );
 
 		// defining speed
-		mOrbitSpeed = Random.Range( 5f, mOrbitMaxSpeed );
+		mOrbitSpeed = Random.Range( 30f, mOrbitMaxSpeed );
 
 		// defining scale
 		float scale = Random.Range(mScaleMin, mScaleMax);
@@ -124,7 +122,6 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	// Destroy Cube
 	private IEnumerator DestroyCube(){
 		mIsAlive = false;
-		playerobject.UpdateScore ();
 
 		// Make the cube desappear
 		GetComponent<Renderer>().enabled = false;

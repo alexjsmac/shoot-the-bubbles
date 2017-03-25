@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
 		score = 0;
 		scoreText.text = "Score: " + score.ToString();
 		healthRemaining = health;
-		//greenHealthBar = FindObjectOfType (typeof(Image)) as Image;
 	}
 	
 	public void UpdateScore ()
@@ -33,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void decreaseHealth() {
 
-		healthRemaining -= 10;
-		greenHealthBar.transform.localScale = new Vector3 (healthRemaining, greenHealthBar.transform.localScale.y, greenHealthBar.transform.localScale.z);
+		//healthRemaining -= 10;
+		greenHealthBar.transform.localScale = new Vector3 (50, 1, 1);
 	}
 }
