@@ -8,6 +8,7 @@ public class LaserScript : MonoBehaviour {
 	public float mFireRange = 50f;
 	public float mHitForce  = 100f;
 	public int mLaserDamage = 100;
+	public PlayerController playerobject;
 
 	// Line render that will represent the Laser
 	private LineRenderer mLaserLine;
@@ -25,6 +26,7 @@ public class LaserScript : MonoBehaviour {
 	void Start () {
 		// getting the Line Renderer
 		mLaserLine = GetComponent<LineRenderer>();
+		playerobject = FindObjectOfType (typeof(PlayerController)) as PlayerController;
 	}
 
 	// Update is called once per frame
@@ -70,6 +72,7 @@ public class LaserScript : MonoBehaviour {
 					cubeCtr.Hit (mLaserDamage);
 				}
 			}
+			playerobject.UpdateScore ();
 		} else {
 			// Set the enfo of the laser line to be forward the camera
 			// using the Laser range
