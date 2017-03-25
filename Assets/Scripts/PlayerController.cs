@@ -25,5 +25,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		score += 100;
 		scoreText.text = "Score: " + score.ToString();
+		score += 100;
+		print ("Update score!");
 	}
 }
