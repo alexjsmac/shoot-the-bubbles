@@ -9,7 +9,6 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	// Cube's Max/Min scale
 	public float mScaleMax  = 2f;
 	public float mScaleMin  = 0.5f;
-	public PlayerController playerobject;
 	 
 	// Orbit max Speed
 	public float mOrbitMaxSpeed = 30f;
@@ -32,7 +31,6 @@ public class BubbleBehaviourScript : MonoBehaviour {
 
 	void Start () {
 		CubeSettings();
-		playerobject = FindObjectOfType (typeof(PlayerController)) as PlayerController;
 	}
 		
 	// Set initial cube settings
@@ -68,9 +66,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		if ( !mIsCubeScaled )
 			ScaleObj();
 
-		print("object position: " + transform.position);
-
-		if (transform.position.z < 1) {
+		if (transform.position.z < 1 && (transform.position.x != 0 && transform.position.y != 0)) {
 			StartCoroutine( DestroyCube());
 			playerobject.decreaseHealth ();
 
@@ -120,8 +116,8 @@ public class BubbleBehaviourScript : MonoBehaviour {
 
 	// Destroy Cube
 	private IEnumerator DestroyCube(){
+		
 		mIsAlive = false;
-		playerobject.UpdateScore ();
 
 		// Make the cube desappear
 		GetComponent<Renderer>().enabled = false;
