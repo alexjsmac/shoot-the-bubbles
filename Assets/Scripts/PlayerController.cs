@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void decreaseHealth() {
 
-		//healthRemaining -= 10;
-		greenHealthBar.transform.localScale = new Vector3 (50, 1, 1);
+		healthRemaining -= 10;
+		greenHealthBar.transform.localScale = new Vector3 (healthRemaining/100, 1, 1);
 	}
 }
