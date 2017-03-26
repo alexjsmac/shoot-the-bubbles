@@ -12,7 +12,6 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	public PlayerController playerobject;
 	public GameObject explosion;
 
-	 
 	// Orbit max Speed
 	public float mOrbitMaxSpeed = 30f;
 
@@ -75,7 +74,6 @@ public class BubbleBehaviourScript : MonoBehaviour {
 				StartCoroutine (DestroyCube ());
 				transform.tag = "Destroyed";
 				playerobject.decreaseHealth ();
-				print ("Hit!");
 			}
 		}
 	}

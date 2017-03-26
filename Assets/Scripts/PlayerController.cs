@@ -45,10 +45,9 @@ public class PlayerController : MonoBehaviour {
 			restartTimer += Time.deltaTime;
 
 			// .. if it reaches the restart delay...
-			if(restartTimer >= restartDelay)
-			{
+			if (restartTimer >= restartDelay) {
 				// .. then reload the currently loaded level.
-				Application.LoadLevel(Application.loadedLevel);
+				Application.LoadLevel (Application.loadedLevel);
 			}
 		}
 	}
