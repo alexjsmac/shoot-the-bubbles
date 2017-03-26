@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 83fe5921cb7ee407392c56a3da3d1eed
-timeCreated: 1486657109
+timeCreated: 1490554243
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerobject: {instanceID: 0}
+  - explosion: {fileID: 167558, guid: a11dc34cafe3dfd4facb59cfb4e72de8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -10,6 +10,7 @@ public class SpawnScript : MonoBehaviour {
 
 	// Cube element to spawn
 	public GameObject mCubeObj;
+	public GameObject mCubeObj2;
 
 	// Qtd of Cubes to be Spawned
 	public int mTotalCubes      = 10;
@@ -19,6 +20,7 @@ public class SpawnScript : MonoBehaviour {
 
 	// hold all cubes on stage
 	private GameObject[] mCubes;
+	private GameObject[] mCubes2;
 
 	// define if position was set
 	private bool mPositionSet;
@@ -32,6 +34,8 @@ public class SpawnScript : MonoBehaviour {
 		// Initialize Cubes array according to
 		// the desired quantity
 		mCubes = new GameObject[ mTotalCubes ];
+		mCubes2 = new GameObject[ mTotalCubes ];
+
 	}
 
 	// We'll use a Coroutine to give a little
@@ -72,14 +76,15 @@ public class SpawnScript : MonoBehaviour {
 		int i = 0;
 		while ( i <= (mTotalCubes-1) ) {
 
-			mCubes[i] = SpawnElement();
+			mCubes[i] = SpawnElement(mCubeObj);
+			mCubes2[i] = SpawnElement(mCubeObj2);
 			i++;
 			yield return new WaitForSeconds(Random.Range(mTimeToSpawn, mTimeToSpawn*3));
 		}
 	}
 
 	// Spawn a cube
-	private GameObject SpawnElement() 
+	private GameObject SpawnElement(GameObject mCubeObj) 
 	{
 		// spawn the element on a random position, inside a imaginary sphere
 		GameObject cube = Instantiate(mCubeObj, (Random.insideUnitSphere*4) + transform.position, transform.rotation ) as GameObject;

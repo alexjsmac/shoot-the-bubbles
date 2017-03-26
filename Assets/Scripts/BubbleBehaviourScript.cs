@@ -10,6 +10,8 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	public float mScaleMax  = 2f;
 	public float mScaleMin  = 0.5f;
 	public PlayerController playerobject;
+	public GameObject explosion;
+
 	 
 	// Orbit max Speed
 	public float mOrbitMaxSpeed = 30f;
@@ -90,7 +92,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 
 		// rotating around its axis
 		transform.Rotate( mOrbitDirection * 30 * Time.deltaTime);
-	}
+	}s
 
 	// Scale object from 0 to 1
 	private void ScaleObj(){
@@ -119,12 +121,16 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		return false;
 	}
 
+
 	// Destroy Cube
 	private IEnumerator DestroyCube(){
 		mIsAlive = false;
 
-		// Make the cube desappear
+	// Make the cube desappear
 		GetComponent<Renderer>().enabled = false;
+
+	// Explosion 
+		Instantiate (explosion, transform.position, transform.rotation);
 
 		// we'll wait some time before destroying the element
 		// this is usefull when using some kind of effect
