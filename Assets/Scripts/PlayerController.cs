@@ -13,9 +13,7 @@ public class PlayerController : MonoBehaviour {
 	public float healthRemaining= 0f;
 	public Image greenHealthBar;
 
-	public float restartDelay = 5f;         // Time to wait before restarting the level
 	Animator anim;                          // Reference to the animator component.
-	float restartTimer;                     // Timer to count up to restarting the level
 
 	// Use this for initialization
 	public void Start () {
@@ -40,15 +38,6 @@ public class PlayerController : MonoBehaviour {
 		{
 			// ... tell the animator the game is over.
 			anim.SetTrigger ("GameOver");
-
-			// .. increment a timer to count up to restarting.
-			restartTimer += Time.deltaTime;
-
-			// .. if it reaches the restart delay...
-			if (restartTimer >= restartDelay) {
-				// .. then reload the currently loaded level.
-				Application.LoadLevel (Application.loadedLevel);
-			}
 		}
 	}
 

@@ -31,6 +31,9 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	public float mGrowingSpeed  = 10f;
 	private bool mIsCubeScaled  = false;
 
+	// Reference to the animator component.
+	Animator anim;
+
 	void Start () {
 		CubeSettings();
 		playerobject = FindObjectOfType (typeof(PlayerController)) as PlayerController;
@@ -79,6 +82,12 @@ public class BubbleBehaviourScript : MonoBehaviour {
 				transform.tag = "Destroyed";
 				playerobject.decreaseHealth ();
 			}
+		}
+
+		if (GameObject.FindGameObjectsWithTag ("Alive").Length == 0) {
+			
+			// ... tell the animator the game is over.
+			anim.SetTrigger ("GameOver");
 		}
 	}
 
