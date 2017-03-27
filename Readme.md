@@ -1,5 +1,6 @@
 # Download and Install
 The user can install the game from the Google Play Store: 
+
 https://play.google.com/store/apps/details?id=com.alexmaclean.shootthebubbles
 
 # Preface
