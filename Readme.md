@@ -1,5 +1,5 @@
 # Download and Install
-The user can install the game from the Google Play Store: 
+The user can download and install the game from the Google Play Store using the link below. The app is in Beat release so you have to use the link to open and play it. 
 
 https://play.google.com/store/apps/details?id=com.alexmaclean.shootthebubbles
 
