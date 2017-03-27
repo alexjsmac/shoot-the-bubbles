@@ -8,9 +8,13 @@ The player is dropped into the game and immediately tasked to shoot bubbles that
 
 Stay in one spot and turn 360 degrees to shoot bubbles that show up on screen. The player can see bubbles around them by looking at the minimap.
 
-The game can be played in either landscape or portrait mode
+The game can be played in either landscape or portrait mode.
 
-![Alt Text] (/Images/1.png?raw=true)
+
+![Alt text](/Images/1.png?raw=true "Screenshot 1")
+![Alt text](/Images/2.png?raw=true "Screenshot 2")
+![Alt text](/Images/3.png?raw=true "Screenshot 3")
+
 # Requirements to run the game
 
 To run the game on Unity, the user must download the Vuforia framework and the Android Unity framework. This will allow the user to access the augmented reality aspects of the game as well as run it on their phone. 
