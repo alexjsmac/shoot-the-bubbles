@@ -77,7 +77,9 @@ public class SpawnScript : MonoBehaviour {
 		while ( i <= (mTotalCubes-1) ) {
 
 			mCubes[i] = SpawnElement(mCubeObj);
-			mCubes2[i] = SpawnElement(mCubeObj2);
+			if (i % 2 != 0) {
+				mCubes2 [i] = SpawnElement (mCubeObj2);
+			}
 			i++;
 			yield return new WaitForSeconds(Random.Range(mTimeToSpawn, mTimeToSpawn*3));
 		}

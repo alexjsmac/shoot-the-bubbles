@@ -13,7 +13,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	public GameObject explosion;
 
 	// Orbit max Speed
-	public float mOrbitMaxSpeed = 30f;
+	public float mOrbitMaxSpeed = 20f;
 
 	// Orbit speed
 	private float mOrbitSpeed;
@@ -49,7 +49,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		mOrbitDirection = new Vector3( x, y, z );
 
 		// defining speed
-		mOrbitSpeed = Random.Range( 30f, mOrbitMaxSpeed );
+		mOrbitSpeed = Random.Range( 1f, mOrbitMaxSpeed );
 
 		// defining scale
 		float scale = Random.Range(mScaleMin, mScaleMax);
@@ -83,7 +83,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 	private void RotateCube(){
 
 		// rotate cube around camera
-		//transform.RotateAround(mOrbitAnchor.position, mOrbitDirection, mOrbitSpeed * Time.deltaTime);
+		transform.RotateAround(mOrbitAnchor.position, mOrbitDirection, mOrbitSpeed * Time.deltaTime);
 
 		transform.LookAt(Camera.main.transform);
 		transform.Translate (Vector3.forward * Time.deltaTime);
