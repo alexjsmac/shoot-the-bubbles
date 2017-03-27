@@ -1,5 +1,7 @@
+# Revenge of the Bubbles
+
 # Download and Install
-The user can download and install the game from the Google Play Store using the link below. The game is in Beta release so you have to use the link to open the app and play it. 
+The user can download and install the game from the Google Play Store using the link below. The actual application on your phone will be called Shoot the Bubbles. 
 
 https://play.google.com/store/apps/details?id=com.alexmaclean.shootthebubbles
 
