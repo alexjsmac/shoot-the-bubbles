@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public Image greenHealthBar;
 
 	public AudioClip gameOverSound;
-	private AudioSource source;
+	//private AudioSource source;
 
 	Animator anim;                          // Reference to the animator component.
 
@@ -26,10 +26,14 @@ public class PlayerController : MonoBehaviour {
 		source = GetComponent<AudioSource> ();
 	}
 	
-	public void UpdateScore ()
-	{
-		scoreText.text = "Score: " + score.ToString();
+	public void IncreaseScore () {
 		score += 100;
+		scoreText.text = "Score: " + score.ToString();
+	}
+
+	public void DecreaseScore () {
+		score -= 50;
+		scoreText.text = "Score: " + score.ToString();
 	}
 
 	public void decreaseHealth() {

@@ -75,16 +75,25 @@ public class LaserScript : MonoBehaviour {
 			BubbleBehaviourScript cubeCtr = hit.collider.GetComponent<BubbleBehaviourScript>();
 			if (cubeCtr != null) {
 				if (hit.rigidbody != null) {
+					
 					// apply force to the target
 					hit.rigidbody.AddForce (-hit.normal * mHitForce);
+
 					// apply damage the target
 					cubeCtr.Hit (mLaserDamage);
 				}
 			}
-			playerobject.UpdateScore ();
+
+			if (cubeCtr.CompareTag ("DeathBubble")) {
+				playerobject.IncreaseScore ();
+			} else if (cubeCtr.CompareTag ("HealthBubble")) {
+				playerobject.DecreaseScore ();
+			}
 			float vol = Random.Range (volLowRange, volHighRange);
 			source.PlayOneShot (explodeSound, vol);
+
 		} else {
+			
 			// Set the enfo of the laser line to be forward the camera
 			// using the Laser range
 			mLaserLine.SetPosition(1, cam.forward * mFireRange );
