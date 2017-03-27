@@ -97,7 +97,7 @@ public class BubbleBehaviourScript : MonoBehaviour {
 		transform.Translate (Vector3.forward * Time.deltaTime);
 
 		// rotating around its axis
-		transform.Rotate( mOrbitDirection * 30 * Time.deltaTime);
+		transform.Rotate( Vector3.right, 10f * Time.deltaTime);
 	}
 
 	// Scale object from 0 to 1

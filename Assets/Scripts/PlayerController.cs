@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 		score = 0;
 		scoreText.text = "Score: " + score.ToString();
 		healthRemaining = health;
-		source = GetComponent<AudioSource> ();
+		//source = GetComponent<AudioSource> ();
 	}
 	
 	public void IncreaseScore () {
