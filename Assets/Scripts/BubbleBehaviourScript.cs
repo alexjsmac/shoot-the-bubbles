@@ -73,7 +73,11 @@ public class BubbleBehaviourScript : MonoBehaviour {
 			ScaleObj();
 
 		if (transform.position.z < 1 && (transform.position.x != 0 && transform.position.y != 0) && transform.childCount == 0) {
-			if (transform.CompareTag("Alive")) {
+			if (transform.CompareTag("healthBubbleTag")) {
+				StartCoroutine (DestroyCube ());
+				transform.tag = "Destroyed";
+				playerobject.increaseHealth ();
+			}else if (transform.CompareTag("Alive")) {
 				StartCoroutine (DestroyCube ());
 				transform.tag = "Destroyed";
 				playerobject.decreaseHealth ();

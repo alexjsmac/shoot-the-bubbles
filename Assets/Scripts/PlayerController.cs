@@ -41,6 +41,17 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	public void increaseHealth() {
+
+		// If the player has run out of health...
+		if(healthRemaining != 100)
+		{
+			healthRemaining += 10;
+			greenHealthBar.transform.localScale = new Vector3 (healthRemaining/100, 1, 1);
+
+		}
+	}
+
 	void Awake ()
 	{
 		// Set up the reference.
