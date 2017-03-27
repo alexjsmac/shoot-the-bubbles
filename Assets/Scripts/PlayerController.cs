@@ -36,9 +36,13 @@ public class PlayerController : MonoBehaviour {
 		// If the player has run out of health...
 		if(healthRemaining <= 0)
 		{
-			// ... tell the animator the game is over.
-			anim.SetTrigger ("GameOver");
+			endGame ();
 		}
+	}
+
+	public void endGame() {
+		// ... tell the animator the game is over.
+		anim.SetTrigger ("GameOver");
 	}
 
 	public void increaseHealth() {
