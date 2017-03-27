@@ -1,3 +1,6 @@
+# Download and Install
+The user can install the game from the Google Play Store: https://play.google.com/store/apps/details?id=com.alexmaclean.shootthebubbles
+
 # Preface
 Oh no the bubbles have escaped! You play as a scientist who has been working on a military experiment to create bubbles for war. Unfortunately the bubbles have mysteriously gotten out of their cages and turned on their creators! These deadly creatures have been made to withstand the harshest of environments and the toughest of opponents but luckily you have your Bubble Blaster 2000. Your job is to hunt them down and kill them before too many people are hurt.
 
