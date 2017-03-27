@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour {
 	public float healthRemaining= 0f;
 	public Image greenHealthBar;
 
+	public AudioClip gameOverSound;
+	private AudioSource source;
+
 	Animator anim;                          // Reference to the animator component.
 
 	// Use this for initialization
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 		score = 0;
 		scoreText.text = "Score: " + score.ToString();
 		healthRemaining = health;
+		source = GetComponent<AudioSource> ();
 	}
 	
 	public void UpdateScore ()
@@ -42,6 +46,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void endGame() {
 		// ... tell the animator the game is over.
+		//source.PlayOneShot (gameOverSound, 1f);
 		anim.SetTrigger ("GameOver");
 	}
 

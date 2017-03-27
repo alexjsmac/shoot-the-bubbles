@@ -22,18 +22,27 @@ public class LaserScript : MonoBehaviour {
 	// time of the until the next fire
 	private float mNextFire;
 
+	public AudioClip shootSound;
+	public AudioClip explodeSound;
+	private AudioSource source;
+	private float volLowRange = .5f;
+	private float volHighRange = 1.0f;
+
 	// Use this for initialization
 	void Start () {
 		// getting the Line Renderer
 		mLaserLine = GetComponent<LineRenderer>();
 		playerobject = FindObjectOfType (typeof(PlayerController)) as PlayerController;
+		source = GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if ( Input.GetButton("Fire1") && Time.time > mNextFire ){
 			Fire();
-		}    
+			float vol = Random.Range (volLowRange, volHighRange);
+			source.PlayOneShot (shootSound, vol);
+		}
 	}
 
 	// Shot the Laser
@@ -73,6 +82,8 @@ public class LaserScript : MonoBehaviour {
 				}
 			}
 			playerobject.UpdateScore ();
+			float vol = Random.Range (volLowRange, volHighRange);
+			source.PlayOneShot (explodeSound, vol);
 		} else {
 			// Set the enfo of the laser line to be forward the camera
 			// using the Laser range
