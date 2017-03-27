@@ -9,7 +9,7 @@ The user can download and install the game from the Google Play Store using the 
 https://play.google.com/store/apps/details?id=com.alexmaclean.shootthebubbles
 
 
-# How to play the game
+# How to Play
 
 The player is dropped into the game and immediately tasked to shoot bubbles that are coming at them. The black "Death Bubbles" cause the player to lose health but also provide the player with points when they are shot. The red "Health Bubbles" cause the player to gain health but cause the player to lose health when they are shot. 
 
@@ -21,13 +21,9 @@ The game can be played in either landscape or portrait mode.
 ![Alt text](/Images/2.png?raw=true "Screenshot 2")
 ![Alt text](/Images/3.png?raw=true "Screenshot 3")
 
-# Requirements to run the game
+# Requirements to Run on Unity
 
 To run the game on Unity, the user must download the Vuforia framework and the Android Unity framework. This will allow the user to access the augmented reality aspects of the game as well as run it on their phone. 
-
-# How to run the game 
-
-The game can be run either by opening the included APK file or by downloading the Unity files and running it. 
 
 # Special notes
 
