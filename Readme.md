@@ -10,6 +10,7 @@ Stay in one spot and turn 360 degrees to shoot bubbles that show up on screen. T
 
 The game can be played in either landscape or portrait mode
 
+![Alt Text] (/Images/1.png?raw=true)
 # Requirements to run the game
 
 To run the game on Unity, the user must download the Vuforia framework and the Android Unity framework. This will allow the user to access the augmented reality aspects of the game as well as run it on their phone. 
